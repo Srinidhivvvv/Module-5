@@ -1,40 +1,68 @@
-# Exp.No:25  
-## Hierarchical Inheritance
+
+# Exp.No:5d  
+## Multi-level Inheritance
 
 ---
 
 ### AIM  
-To write a Python program to get the employee and doctor details and display them using hierarchical inheritance. Create a parent (base) class named `Details` and two child (derived) classes named `Employee` and `Doctor`.
+To write a Python program to get the name, age, and ID of a person and display them using multilevel inheritance.
 
 ---
 
 ### ALGORITHM
 
-1. **Begin the program.**
-2. **Create a class Details** with an `__init__` method to initialize three attributes: `id`, `name`, and `gender`.
-3. **Define a method display_details()** to print the values of `id`, `name`, and `gender`.
-4. **Create a class Employee** that inherits from the `Details` class. 
-   - Add two additional attributes: `company` and `department`.
-   - Override the `display_details()` method to print the employee-specific attributes (`company` and `department`) along with the inherited details.
-5. **Create a class Doctor** that also inherits from the `Details` class. 
-   - Add two additional attributes: `hospital` and `department`.
-   - Override the `display_details()` method to print the doctor-specific attributes (`hospital` and `department`) along with the inherited details.
-6. **Accept input** for employee and doctor details.
-7. **Create objects of Employee and Doctor** using the input.
-8. **Call the `display_details()` method** for both objects to print the details.
-9. **Terminate the program.**
+1. Define the `Person` class:
+   - Inside the `Person` class, define the `__init__` method (constructor) with two parameters: `name` and `age`.
+   - Inside the `__init__` method, assign the `name` to `self.name` and `age` to `self.age`.
+
+2. Define the `PersonDetails` class that inherits from the `Person` class:
+   - Inside the `PersonDetails` class, define the `__init__` method (constructor) with three parameters: `name`, `age`, and `person_id`.
+   - Inside the `__init__` method, call the `__init__` method of the `Person` class using `super()` to initialize `name` and `age`.
+   - Assign `person_id` to `self.person_id`.
+
+3. Define the `DisplayDetails` class that inherits from the `PersonDetails` class:
+   - Inside the `DisplayDetails` class, define the `__init__` method (constructor) with three parameters: `name`, `age`, and `person_id`.
+   - Inside the `__init__` method, call the `__init__` method of the `PersonDetails` class using `super()` to initialize `name`, `age`, and `person_id`.
+
+4. Inside the `DisplayDetails` class, define the `show_details` method:
+   - Inside the `show_details` method, return a formatted string with `self.name`, `self.age`, and `self.person_id`.
+
+5. Prompt the user to enter `name` (string), `age` (integer), and `person_id` (integer).
+
+6. Create an instance `person` of the `DisplayDetails` class, passing `name`, `age`, and `person_id` to the constructor.
+
+7. Call the `show_details` method on the `person` object and print the result.
+
+8. Terminate the program.
 
 ---
 
 ### PROGRAM
+
+```python
+class Person:
+    def getname(self,name):
+        self.name=name
+class Age(Person):
+    def getage(self,age):
+        self.age=age
+class Location(Age):
+    def getlocation(self,l):
+        self.l=l
+    def display(self):
+        print(f"{self.name} {self.age} {self.l}")
+n=input()
+a=int(input())
+l=input()
+g=Location()
+g.getname(n)
+g.getage(a)
+g.getlocation(l)
+g.display()
 ```
 
-
-```
-
-### OUTPUT  
-
-(Output Screenshot)  
-
+### OUTPUT
+<img width="1182" height="242" alt="image" src="https://github.com/user-attachments/assets/011e30c6-c664-4fdc-980e-f3e47c696ab3" />
 
 ### RESULT
+Therefore, the output is the example to write a Python program to get the name, age, and ID of a person and display them using multilevel inheritance.
